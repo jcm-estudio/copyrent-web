@@ -390,9 +390,9 @@ export default function Home() {
             </div>
             <div className="flex gap-4 mb-8">
               {[
-                { icon: Facebook, href: 'https://www.facebook.com/DocumentConsultingSA/', label: 'Facebook' },
-                { icon: Instagram, href: 'https://www.instagram.com/documentconsultingsa/', label: 'Instagram' },
-                { icon: Linkedin, href: 'https://www.linkedin.com/company/document-consulting-s.a/', label: 'LinkedIn' },
+                { icon: Facebook, href: 'https://www.facebook.com/CopyRentok', label: 'Facebook' },
+                { icon: Instagram, href: 'https://www.instagram.com/ventascopyrent/', label: 'Instagram' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/company/copyrent/', label: 'LinkedIn' },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -862,9 +862,33 @@ function ContactoSection() {
     mensaje: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    alert('Formulario enviado correctamente. Nos pondremos en contacto a la brevedad.')
+    setSubmitting(true)
+    try {
+      await fetch('https://formsubmit.co/ajax/ventas@copyrent.com.ar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: 'Nuevo contacto desde la web CopyRent',
+          _template: 'table'
+        })
+      });
+      alert('Formulario enviado correctamente. Nos pondremos en contacto a la brevedad.')
+      setFormData({
+        nombre: '', empresa: '', empleados: '', email: '', telefono: '', producto: '', mensaje: ''
+      })
+    } catch {
+      alert('Hubo un error al enviar el formulario. Por favor, intente nuevamente o envíenos un correo directo.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -955,9 +979,10 @@ function ContactoSection() {
             />
             <Button
               type="submit"
-              className="w-full bg-transparent border-2 border-white text-white font-semibold rounded-none h-12 hover:bg-white hover:text-[#0a1628] transition-all duration-300"
+              disabled={submitting}
+              className="w-full bg-transparent border-2 border-white text-white font-semibold rounded-none h-12 hover:bg-white hover:text-[#0a1628] transition-all duration-300 disabled:opacity-50"
             >
-              Enviar
+              {submitting ? 'Enviando...' : 'Enviar'}
             </Button>
           </form>
         </div>
