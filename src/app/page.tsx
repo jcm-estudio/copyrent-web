@@ -824,6 +824,8 @@ function ProductosSection() {
 
   const visibleProducts = filteredProducts.slice(0, visibleCount);
 
+  const basePath = process.env.NODE_ENV === 'production' ? '/copyrent-web' : '';
+
   return (
     <section id="productos" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -857,7 +859,7 @@ function ProductosSection() {
             >
               <div className="h-48 mb-4 w-full flex items-center justify-center bg-white rounded-lg p-2 overflow-hidden shadow-sm">
                 <img
-                  src={p.src}
+                  src={`${basePath}${p.src}`}
                   alt={p.title}
                   className="max-h-full max-w-full object-contain mix-blend-multiply"
                   loading="lazy"
