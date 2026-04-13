@@ -348,8 +348,6 @@ export default function Home() {
         {/* ──── CTA BANNER ──── */}
         <CTABanner />
 
-        {/* ──── EQUIPOS DE IMPRESIÓN ──── */}
-        <EquiposSection />
 
         {/* ──── SOLUCIÓN DE IMPRESIÓN SUSTENTABLE ──── */}
         <SustentableSection />
