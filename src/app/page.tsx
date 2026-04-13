@@ -479,9 +479,9 @@ function SustentableSection() {
         <div ref={ref} className="grid md:grid-cols-2 gap-8 items-center">
           <div className={`transition-all duration-700 ${inView ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-12'}`}>
             <img
-              src="https://copyrent.com.ar/wp-content/uploads/2021/04/Banner5-scaled.jpg"
-              alt="Aulas Híbridas Epson"
-              className="max-h-[300px] mx-auto object-cover rounded-xl shadow-lg"
+              src={`${process.env.NODE_ENV === 'production' ? '/copyrent-web' : ''}/images/products/Especificaciones-POWERLITE-L210W.jpeg`}
+              alt="Proyector Epson BrightLink Aulas Híbridas"
+              className="max-h-[300px] mx-auto object-cover rounded-xl shadow-lg mix-blend-multiply"
               loading="lazy"
             />
           </div>
@@ -875,12 +875,9 @@ function ContactoSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left side - Info */}
           <div className="text-white">
-            <img
-              src="https://www.COPYRENT.COM.AR/wp-content/uploads/2026/01/DOCUMENT-WEB-HOME_ICONO-CONTACTO-1.png"
-              alt="Contacto"
-              className="h-32 mb-6"
-              loading="lazy"
-            />
+            <div className="bg-white/10 w-20 h-20 rounded-full flex items-center justify-center mb-6">
+              <Mail className="h-10 w-10 text-[#0170B9] opacity-90" />
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">CONTACTO</h2>
             <p className="text-white/70 text-lg mb-8">
               Cuéntenos qué necesita y un asesor se pondrá en contacto a la brevedad.
