@@ -29,6 +29,11 @@ import {
   Phone,
   Mail,
   MapPin,
+  Monitor,
+  TrendingDown,
+  Activity,
+  Shield,
+  Globe,
 } from 'lucide-react'
 
 /* Social Icons Fallbacks */
@@ -128,10 +133,10 @@ export default function Home() {
       label: 'Equipamiento',
       href: '#equipamiento',
       children: [
-        { label: 'Impresoras', href: '#equipamiento' },
-        { label: 'Multifuncionales', href: '#equipamiento' },
-        { label: 'Duplicadora Digital', href: '#equipamiento' },
-        { label: 'Proyectores', href: '#equipamiento' },
+        { label: 'Impresoras', href: '#productos' },
+        { label: 'Multifuncionales', href: '#productos' },
+        { label: 'Duplicadora Digital', href: '#productos' },
+        { label: 'Proyectores', href: '#productos' },
       ],
     },
     { label: 'Servicios', href: '#servicios' },
@@ -272,7 +277,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="#equipamiento"
+                href="#productos"
                 className="w-full sm:w-auto px-8 py-4 bg-[#0170B9] text-white font-semibold rounded-lg text-lg hover:bg-[#015086] hover:shadow-lg transition-all duration-300"
               >
                 Ver Productos
@@ -370,7 +375,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-col items-center text-center">
             <img
-              src="https://www.COPYRENT.COM.AR/wp-content/uploads/2019/07/Nuevo-Logo.png"
+              src="https://copyrent.com.ar/wp-content/uploads/2020/05/nuevo-logo.png"
               alt="CopyRent"
               className="h-20 mb-6 brightness-0 invert"
             />
@@ -442,62 +447,6 @@ function CTABanner() {
   )
 }
 
-/* ──── EQUIPOS DE IMPRESIÓN ──── */
-function EquiposSection() {
-  const { ref, inView } = useInView()
-  const equipos = [
-    { src: 'https://www.COPYRENT.COM.AR/wp-content/uploads/2021/09/9-1-1024x1024.png', alt: 'Epson WF-C20750' },
-    { src: 'https://www.COPYRENT.COM.AR/wp-content/uploads/2021/09/4-1-1024x1024.png', alt: 'Equipo de impresión' },
-    { src: 'https://www.COPYRENT.COM.AR/wp-content/uploads/2019/09/ecoprint-02.jpg', alt: 'Ecoprint' },
-    { src: 'https://www.COPYRENT.COM.AR/wp-content/uploads/2019/09/ecoprint-02-1.jpg', alt: 'Ecoprint Plus' },
-    { src: 'https://www.COPYRENT.COM.AR/wp-content/uploads/2021/09/5-1-1024x1024.png', alt: 'Equipo multifunción' },
-    { src: 'https://www.COPYRENT.COM.AR/wp-content/uploads/2019/09/ecoprint_Mesa-de-trabajo-1-1.jpg', alt: 'Ecoprint Pro' },
-  ]
-
-  return (
-    <section ref={ref} className="py-16 md:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className={`text-center mb-12 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-            Equipos de Impresión y Copiado
-          </h2>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            Equipos y soluciones de impresión profesional, seleccionados para las necesidades de su empresa.
-          </p>
-        </div>
-
-        {/* Desktop grid */}
-        <div className="hidden md:grid grid-cols-3 gap-6">
-          {equipos.map((eq, i) => (
-            <div
-              key={i}
-              className="bg-gray-50 rounded-xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow group"
-            >
-              <img
-                src={eq.src}
-                alt={eq.alt}
-                className="max-h-48 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile scroll */}
-        <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
-          {equipos.map((eq, i) => (
-            <div
-              key={i}
-              className="min-w-[200px] snap-center bg-gray-50 rounded-xl p-4 flex items-center justify-center"
-            >
-              <img
-                src={eq.src}
-                alt={eq.alt}
-                className="max-h-36 w-auto object-contain"
-                loading="lazy"
-              />
-            </div>
-          ))}
         </div>
       </div>
     </section>
@@ -632,19 +581,12 @@ function TransformacionSection() {
 function ControlMonitoreoSection() {
   const { ref, inView } = useInView()
 
-  const logos = [
-    'https://www.COPYRENT.COM.AR/wp-content/uploads/2026/03/DOCUMENT-WEB-HOME_LOGOS-CONTROL-Y-MONITOREO-15.png',
-    'https://www.COPYRENT.COM.AR/wp-content/uploads/2026/03/DOCUMENT-WEB-HOME_LOGOS-CONTROL-Y-MONITOREO-14.png',
-    'https://www.COPYRENT.COM.AR/wp-content/uploads/2026/03/DOCUMENT-WEB-HOME_LOGOS-CONTROL-Y-MONITOREO-13.png',
-    'https://www.COPYRENT.COM.AR/wp-content/uploads/2026/03/DOCUMENT-WEB-HOME_LOGOS-CONTROL-Y-MONITOREO-12.png',
-  ]
-
   const beneficios = [
-    { title: 'Monitoreo centralizado', desc: 'Accedé a un panel que muestra el estado de cada equipo, consumos y alertas de mantenimiento.', icon: 'https://www.COPYRENT.COM.AR/wp-content/uploads/2026/01/DOCUMENT-WEB-HOME_ICONOS-DE-CONTROL-Y-MONITOREO-16-1.png' },
-    { title: 'Reducción de costos operativos', desc: 'Controlá el uso por área, usuario o centro de costos, asignando políticas de impresión consientes.', icon: 'https://www.COPYRENT.COM.AR/wp-content/uploads/2026/01/DOCUMENT-WEB-HOME_ICONOS-DE-CONTROL-Y-MONITOREO-17.png' },
-    { title: 'Automatización y control inteligente', desc: 'Detectá incidencias antes de que impacten, con reportes automáticos de rendimiento y gasto.', icon: 'https://www.COPYRENT.COM.AR/wp-content/uploads/2026/01/DOCUMENT-WEB-HOME_ICONOS-DE-CONTROL-Y-MONITOREO-18-1.png' },
-    { title: 'Seguridad y trazabilidad', desc: 'Protegé los documentos con autenticación, marcas de agua y auditorías de impresión.', icon: 'https://www.COPYRENT.COM.AR/wp-content/uploads/2026/01/DOCUMENT-WEB-HOME_ICONOS-DE-CONTROL-Y-MONITOREO-19.png' },
-    { title: 'Gestión remota', desc: 'Configurá y administrá toda tu flota desde cualquier lugar, con soporte técnico remoto.', icon: 'https://www.COPYRENT.COM.AR/wp-content/uploads/2026/01/DOCUMENT-WEB-HOME_ICONOS-DE-CONTROL-Y-MONITOREO-20.png' },
+    { title: 'Monitoreo centralizado', desc: 'Accedé a un panel que muestra el estado de cada equipo, consumos y alertas de mantenimiento.', icon: Monitor },
+    { title: 'Reducción de costos operativos', desc: 'Controlá el uso por área, usuario o centro de costos, asignando políticas de impresión consientes.', icon: TrendingDown },
+    { title: 'Automatización y control inteligente', desc: 'Detectá incidencias antes de que impacten, con reportes automáticos de rendimiento y gasto.', icon: Activity },
+    { title: 'Seguridad y trazabilidad', desc: 'Protegé los documentos con autenticación, marcas de agua y auditorías de impresión.', icon: Shield },
+    { title: 'Gestión remota', desc: 'Configurá y administrá toda tu flota desde cualquier lugar, con soporte técnico remoto.', icon: Globe },
   ]
 
   return (
@@ -661,11 +603,7 @@ function ControlMonitoreoSection() {
           <p className="text-gray-700 font-semibold mb-2">Soluciones incluidas</p>
         </div>
 
-        <div className="flex gap-8 overflow-x-auto py-4 mb-6 justify-center">
-          {logos.map((src, i) => (
-            <img key={i} src={src} alt={`Logo control ${i + 1}`} className="h-14 md:h-16 w-auto object-contain flex-shrink-0" loading="lazy" />
-          ))}
-        </div>
+        <div className="mb-6"></div>
 
         <div className="text-center max-w-3xl mx-auto mb-8">
           <p className="text-gray-500 mb-4">
@@ -691,7 +629,9 @@ function ControlMonitoreoSection() {
               className={`flex gap-4 p-4 rounded-lg border border-gray-100 bg-white hover:border-[#0170B9]/30 hover:shadow-md transition-all duration-500 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <img src={b.icon} alt="" className="h-14 w-14 flex-shrink-0 object-contain" loading="lazy" />
+              <div className="h-14 w-14 flex-shrink-0 bg-[#f0f4f8] rounded-full flex items-center justify-center">
+                <b.icon className="h-6 w-6 text-[#0170B9]" />
+              </div>
               <div>
                 <h5 className="font-semibold text-gray-900 mb-1">{b.title}</h5>
                 <p className="text-sm text-gray-500">{b.desc}</p>
@@ -900,13 +840,13 @@ function MarcasBanner() {
     <section className="py-8 bg-white">
       <div className="max-w-5xl mx-auto px-4">
         <img
-          src="https://www.COPYRENT.COM.AR/wp-content/uploads/2026/04/Mesa-de-trabajo-1-copia-100.jpg"
+          src="https://document-consulting.com/wp-content/uploads/2023/04/Mesa-de-trabajo-1-copia-100.jpg"
           alt="Trabajamos con marcas líderes como Epson, Canon, Lexmark, Toshiba, Avision y Kodak Alaris"
           className="w-full hidden md:block"
           loading="lazy"
         />
         <img
-          src="https://www.COPYRENT.COM.AR/wp-content/uploads/2026/04/Mesa-de-trabajo-2-copia-100.jpg"
+          src="https://document-consulting.com/wp-content/uploads/2023/04/Mesa-de-trabajo-2-copia-100.jpg"
           alt="Trabajamos con marcas líderes como Epson, Canon, Lexmark, Toshiba, Avision y Kodak Alaris"
           className="w-full md:hidden"
           loading="lazy"
