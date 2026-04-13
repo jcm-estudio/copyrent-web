@@ -447,11 +447,7 @@ function CTABanner() {
   )
 }
 
-        </div>
-      </div>
-    </section>
-  )
-}
+
 
 /* ──── AULAS HÍBRIDAS ──── */
 function SustentableSection() {
