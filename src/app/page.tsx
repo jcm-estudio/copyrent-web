@@ -385,7 +385,7 @@ export default function Home() {
                 <Phone className="h-4 w-4" /> +54 9 11 6965-2756
               </p>
               <p className="flex items-center justify-center gap-2">
-                <Mail className="h-4 w-4" /> INFO@COPYRENT.COM.AR
+                <Mail className="h-4 w-4" /> ventas@copyrent.com
               </p>
             </div>
             <div className="flex gap-4 mb-8">
@@ -409,7 +409,7 @@ export default function Home() {
           </div>
         </div>
         <div className="border-t border-white/10 py-4 text-center text-xs text-white/50">
-          Copyright © {new Date().getFullYear()} CopyRent | Web Manager: www.metanoia.ar
+          Copyright © 2026 CopyRent | Web JCM Julio Mendez
         </div>
       </footer>
 
