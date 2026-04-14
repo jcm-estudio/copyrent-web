@@ -749,6 +749,18 @@ function ProductosSection() {
       title: 'Ricoh SP 3710SF',
       desc: 'Impresora Multifunción Láser B/N Compacta.',
       type: 'Impresora / Multifunción'
+    },
+    {
+      src: '/images/products/Epson-BrightLink-695Wi.jpeg',
+      title: 'Epson BrightLink 695Wi+',
+      desc: 'Proyector Interactivo Ultramontaje WXGA. Ideal para educación.',
+      type: 'Proyector'
+    },
+    {
+      src: '/images/products/Epson-BrightLink-760Wi.jpeg',
+      title: 'Epson BrightLink 760Wi',
+      desc: 'Proyector Láser Interactivo 3LCD. 4.100 lúmenes para aprendizaje inmersivo.',
+      type: 'Proyector'
     }
   ]
 
