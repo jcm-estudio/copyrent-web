@@ -479,7 +479,7 @@ function SustentableSection() {
         <div ref={ref} className="grid md:grid-cols-2 gap-8 items-center">
           <div className={`transition-all duration-700 ${inView ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-12'}`}>
             <img
-              src={`${process.env.NODE_ENV === 'production' ? '/copyrent-web' : ''}/images/products/Especificaciones-POWERLITE-L210W.jpeg`}
+              src={`${process.env.NODE_ENV === 'production' ? '/copyrent-web' : ''}/images/products/aula-interactiva.jpeg`}
               alt="Proyector Epson BrightLink Aulas Híbridas"
               className="max-h-[300px] mx-auto object-cover rounded-xl shadow-lg mix-blend-multiply"
               loading="lazy"
