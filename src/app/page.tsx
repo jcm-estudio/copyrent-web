@@ -284,7 +284,7 @@ export default function Home() {
             </p>
             
             {/* Premium Feature Badge with Typewriter Effect */}
-            <div className="absolute top-[80%] left-1/2 -translate-x-1/2 w-full max-w-lg lg:left-full lg:-translate-x-0 lg:-ml-12 lg:-mt-24 pointer-events-none mt-12 lg:mt-0 px-4 sm:px-0">
+            <div className="absolute top-[65%] left-1/2 -translate-x-1/2 w-full max-w-xl lg:left-full lg:-translate-x-0 lg:-ml-12 lg:-mt-32 pointer-events-none mt-12 lg:mt-0 px-4 sm:px-0">
               <PremiumFeatureBadge />
             </div>
 
@@ -594,24 +594,36 @@ function PremiumFeatureBadge() {
   ], [])
 
   return (
-    <div className="inline-flex items-center gap-3 md:gap-4 bg-white/10 backdrop-blur-md border border-white/20 p-2 md:p-3 pr-4 md:pr-6 rounded-2xl shadow-2xl animate-fade-in pointer-events-auto">
-      {/* Icon Container */}
-      <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-white/20 rounded-xl flex items-center justify-center p-1 overflow-hidden shadow-inner">
-        <img 
-          src={`${process.env.NODE_ENV === 'production' ? '/copyrent-web' : ''}/images/printer-icon.png`}
-          alt="Printer Icon" 
-          className="w-full h-full object-contain"
-          loading="lazy"
-        />
+    <div className="inline-flex items-center gap-3 md:gap-4 bg-white/10 backdrop-blur-md border border-white/20 p-2 md:p-3 pr-5 md:pr-8 rounded-2xl shadow-2xl animate-fade-in pointer-events-auto min-w-[280px] md:min-w-[340px]">
+      {/* Icons Group */}
+      <div className="flex items-center gap-2">
+        {/* Printer Icon */}
+        <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center p-0.5 overflow-hidden">
+          <img 
+            src={`${process.env.NODE_ENV === 'production' ? '/copyrent-web' : ''}/images/printer-icon.png`}
+            alt="Printer Icon" 
+            className="w-full h-full object-contain filter drop-shadow-lg"
+            loading="lazy"
+          />
+        </div>
+        {/* Projector Icon */}
+        <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center p-0.5 overflow-hidden border-l border-white/10 pl-2">
+          <img 
+            src={`${process.env.NODE_ENV === 'production' ? '/copyrent-web' : ''}/images/projector-icon.png`}
+            alt="Projector Icon" 
+            className="w-full h-full object-contain filter drop-shadow-lg"
+            loading="lazy"
+          />
+        </div>
       </div>
       
       {/* Text Content */}
-      <div className="flex flex-col">
+      <div className="flex flex-col flex-grow">
         <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#0170B9] mb-0.5">
           CopyRent Plus
         </span>
         <div className="flex items-center min-h-[1.5rem] md:min-h-[1.75rem]">
-          <span className="text-sm md:text-base font-semibold text-white truncate">
+          <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">
             <Typewriter phrases={phrases} />
           </span>
           <span className="w-0.5 h-4 md:h-5 bg-[#0170B9] ml-1 animate-cursor-blink" />
