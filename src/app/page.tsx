@@ -276,7 +276,7 @@ export default function Home() {
               Alquiler de equipos de impresión, copiadoras y venta de proyectores.
             </h1>
             <p className="text-xl sm:text-2xl md:text-2xl font-light text-white/90 mb-2">
-              Equipá tu empresa o institución educativa con tecnología de última generación sin inversión inicial.
+              Tecnología sustentable sin inversión inicial. Presupuesto a medida, soporte y atención personalizada para tu empresa o institución educativa.
             </p>
             <p className="text-lg sm:text-xl text-white/80 mb-8">
               Reducí costos hasta un 50%
