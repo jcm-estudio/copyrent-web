@@ -273,20 +273,14 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6 animate-fade-in uppercase">
-              Alquiler de equipos de impresión, copiadoras y venta de proyectores.
-            </h1>
-            <p className="text-xl sm:text-2xl md:text-2xl font-light text-white/90 mb-2">
-              Tecnología sustentable sin inversión inicial. Presupuesto a medida, soporte y atención personalizada para tu empresa o institución educativa.
-            </p>
-            <p className="text-lg sm:text-xl text-white/80 mb-8">
-              Reducí costos hasta un 50%
-            </p>
-            
-            {/* Premium Feature Badge with Typewriter Effect */}
-            <div className="absolute top-[65%] left-1/2 -translate-x-1/2 w-full max-w-xl lg:left-full lg:-translate-x-0 lg:-ml-12 lg:-mt-32 pointer-events-none mt-12 lg:mt-0 px-4 sm:px-0">
+            {/* Premium Feature Badge / Kicker - Relocated before Title */}
+            <div className="flex justify-center mb-6 animate-fade-in">
               <PremiumFeatureBadge />
             </div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6 uppercase">
+              Alquiler de equipos de impresión, copiadoras y venta de proyectores.
+            </h1>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
@@ -593,40 +587,37 @@ function PremiumFeatureBadge() {
     "auditoría sin cargo"
   ], [])
 
+  const [currentIdx, setCurrentIdx] = useState(0)
+  
+  // Update the icon based on the phrase index
+  // Even index: Printer, Odd index: Projector
+  const currentIcon = currentIdx % 2 === 0 
+    ? '/images/printer-icon.png' 
+    : '/images/projector-icon.png'
+
   return (
-    <div className="inline-flex items-center gap-3 md:gap-4 bg-white/10 backdrop-blur-md border border-white/20 p-2 md:p-3 pr-5 md:pr-8 rounded-2xl shadow-2xl animate-fade-in pointer-events-auto min-w-[280px] md:min-w-[340px]">
-      {/* Icons Group */}
-      <div className="flex items-center gap-2">
-        {/* Printer Icon */}
-        <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center p-0.5 overflow-hidden">
-          <img 
-            src={`${process.env.NODE_ENV === 'production' ? '/copyrent-web' : ''}/images/printer-icon.png`}
-            alt="Printer Icon" 
-            className="w-full h-full object-contain filter drop-shadow-lg"
-            loading="lazy"
-          />
-        </div>
-        {/* Projector Icon */}
-        <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center p-0.5 overflow-hidden border-l border-white/10 pl-2">
-          <img 
-            src={`${process.env.NODE_ENV === 'production' ? '/copyrent-web' : ''}/images/projector-icon.png`}
-            alt="Projector Icon" 
-            className="w-full h-full object-contain filter drop-shadow-lg"
-            loading="lazy"
-          />
-        </div>
+    <div className="inline-flex items-center gap-3 md:gap-4 bg-white/10 backdrop-blur-md border border-white/20 p-2 md:p-3 pr-5 md:pr-8 rounded-full shadow-2xl pointer-events-auto w-max max-w-[90vw]">
+      {/* Alternating Icon Container - No background box */}
+      <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center overflow-hidden">
+        <img 
+          key={currentIcon} // Force re-render for animation if needed
+          src={`${process.env.NODE_ENV === 'production' ? '/copyrent-web' : ''}${currentIcon}`}
+          alt="Premium Icon" 
+          className="w-full h-full object-contain filter drop-shadow-xl animate-fade-in"
+          loading="lazy"
+        />
       </div>
       
       {/* Text Content */}
-      <div className="flex flex-col flex-grow">
-        <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#0170B9] mb-0.5">
+      <div className="flex flex-col text-left">
+        <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#0170B9] mb-0.5 opacity-80">
           CopyRent Plus
         </span>
         <div className="flex items-center min-h-[1.5rem] md:min-h-[1.75rem]">
-          <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">
-            <Typewriter phrases={phrases} />
+          <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap overflow-visible">
+            <Typewriter phrases={phrases} onPhraseChange={setCurrentIdx} />
           </span>
-          <span className="w-0.5 h-4 md:h-5 bg-[#0170B9] ml-1 animate-cursor-blink" />
+          <span className="w-0.5 h-4 md:h-5 bg-[#0170B9] ml-1.5 animate-cursor-blink" />
         </div>
       </div>
     </div>
@@ -634,7 +625,7 @@ function PremiumFeatureBadge() {
 }
 
 /* ──── TYPEWRITER ANIMATION HELPER ──── */
-function Typewriter({ phrases }: { phrases: string[] }) {
+function Typewriter({ phrases, onPhraseChange }: { phrases: string[]; onPhraseChange?: (idx: number) => void }) {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0)
   const [currentText, setCurrentText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
@@ -645,31 +636,30 @@ function Typewriter({ phrases }: { phrases: string[] }) {
       const fullPhrase = phrases[currentPhraseIndex]
       
       if (!isDeleting) {
-        // Typing
         setCurrentText(fullPhrase.substring(0, currentText.length + 1))
-        setTypingSpeed(100) // Default typing speed
+        setTypingSpeed(100)
         
         if (currentText === fullPhrase) {
-          // Pause at the end before deleting
           setTypingSpeed(2000)
           setIsDeleting(true)
         }
       } else {
-        // Deleting
         setCurrentText(fullPhrase.substring(0, currentText.length - 1))
-        setTypingSpeed(50) // Fast delete
+        setTypingSpeed(50)
         
         if (currentText === '') {
           setIsDeleting(false)
-          setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length)
-          setTypingSpeed(500) // Pause before next phrase
+          const nextIdx = (currentPhraseIndex + 1) % phrases.length
+          setCurrentPhraseIndex(nextIdx)
+          if (onPhraseChange) onPhraseChange(nextIdx)
+          setTypingSpeed(500)
         }
       }
     }
 
     const timer = setTimeout(handleTyping, typingSpeed)
     return () => clearTimeout(timer)
-  }, [currentText, isDeleting, currentPhraseIndex, phrases, typingSpeed])
+  }, [currentText, isDeleting, currentPhraseIndex, phrases, typingSpeed, onPhraseChange])
 
   return <span>{currentText}</span>
 }
