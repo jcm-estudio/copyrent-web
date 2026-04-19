@@ -293,7 +293,7 @@ export default function Home() {
             </div>
 
             {/* Premium Feature Badge - Relocated below buttons per request */}
-            <div className="mt-10 flex justify-center animate-fade-in">
+            <div className="mt-16 sm:mt-20 flex justify-center animate-fade-in">
               <PremiumFeatureBadge />
             </div>
           </div>
