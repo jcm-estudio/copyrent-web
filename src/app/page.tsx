@@ -279,7 +279,7 @@ export default function Home() {
               Equipá tu empresa o institución educativa con tecnología de última generación sin inversión inicial.
             </p>
             <p className="text-lg sm:text-xl text-white/80 mb-8">
-              Asegurá un ahorro real con nuestro inigualable servicio técnico garantizado.
+              Reducí costos hasta un 50%
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
