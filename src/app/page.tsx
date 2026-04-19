@@ -155,7 +155,7 @@ export default function Home() {
             {/* Logo */}
             <a href="#inicio" className="flex-shrink-0">
               <img
-                src="https://copyrent.com.ar/wp-content/uploads/2020/05/nuevo-logo.png"
+                src="/images/logo.png"
                 alt="CopyRent"
                 className="h-10 md:h-14 w-auto"
               />
@@ -387,9 +387,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-col items-center text-center">
             <img
-              src="https://copyrent.com.ar/wp-content/uploads/2020/05/nuevo-logo.png"
+              src="/images/logo-white.png"
               alt="CopyRent"
-              className="h-20 mb-6 brightness-0 invert"
+              className="h-20 mb-6"
             />
             <div className="space-y-1 mb-6 text-white/80">
               <p className="flex items-center justify-center gap-2">
@@ -871,7 +871,6 @@ function ProductosSection() {
 
   const visibleProducts = filteredProducts.slice(0, visibleCount);
 
-  const basePath = process.env.NODE_ENV === 'production' ? '/copyrent-web' : '';
 
   return (
     <section id="productos" className="py-16 md:py-24 bg-white">
@@ -906,7 +905,7 @@ function ProductosSection() {
             >
               <div className="h-48 mb-4 w-full flex items-center justify-center bg-white rounded-lg p-2 overflow-hidden shadow-sm">
                 <img
-                  src={`${basePath}${p.src}`}
+                  src={p.src}
                   alt={p.title}
                   className="max-h-full max-w-full object-contain mix-blend-multiply"
                   loading="lazy"
