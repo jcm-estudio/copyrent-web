@@ -261,7 +261,7 @@ export default function Home() {
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/images/hero-bg.png" 
+              src={`${process.env.NODE_ENV === 'production' ? '/copyrent-web' : ''}/images/hero-bg.png`}
               alt="Background" 
               className="absolute inset-0 w-full h-full object-cover"
             />
