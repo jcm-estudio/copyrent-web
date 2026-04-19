@@ -256,13 +256,19 @@ export default function Home() {
         {/* ──── HERO SECTION ──── */}
         <section
           id="inicio"
-          className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-[#0a1628] via-[#0d2137] to-[#0a1628] overflow-hidden"
+          className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
         >
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `radial-gradient(circle at 25% 50%, rgba(0,130,64,0.3) 0%, transparent 50%),
-                               radial-gradient(circle at 75% 30%, rgba(0,130,64,0.2) 0%, transparent 50%)`,
-            }} />
+          {/* Background Image with Overlay */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="/images/hero-bg.png" 
+              alt="Background" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Color Overlay: Brand Blue with opacity and mix-blend for a professional look */}
+            <div className="absolute inset-0 bg-[#0170B9]/70 mix-blend-multiply" />
+            {/* Gradient overlay for extra depth and text legibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/90 via-[#0170B9]/40 to-[#0170B9]/30" />
           </div>
 
           <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
