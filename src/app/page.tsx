@@ -273,11 +273,6 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            {/* Premium Feature Badge / Kicker - Relocated before Title */}
-            <div className="flex justify-center mb-6 animate-fade-in">
-              <PremiumFeatureBadge />
-            </div>
-
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6 uppercase">
               Alquiler de equipos de impresión, copiadoras y venta de proyectores.
             </h1>
@@ -295,6 +290,11 @@ export default function Home() {
               >
                 Solicitar Demo
               </a>
+            </div>
+
+            {/* Premium Feature Badge - Relocated below buttons per request */}
+            <div className="mt-10 flex justify-center animate-fade-in">
+              <PremiumFeatureBadge />
             </div>
           </div>
         </section>
@@ -596,28 +596,28 @@ function PremiumFeatureBadge() {
     : '/images/projector-icon.png'
 
   return (
-    <div className="inline-flex items-center gap-3 md:gap-4 bg-white/10 backdrop-blur-md border border-white/20 p-2 md:p-3 pr-5 md:pr-8 rounded-full shadow-2xl pointer-events-auto w-max max-w-[90vw]">
-      {/* Alternating Icon Container - No background box */}
-      <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center overflow-hidden">
+    <div className="inline-flex items-center gap-3 md:gap-4 bg-white/5 backdrop-blur-sm border border-white/10 p-2 md:p-3 pr-5 md:pr-8 rounded-full shadow-xl pointer-events-auto w-max max-w-[90vw]">
+      {/* Alternating Icon Container - Removed all background boxes */}
+      <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center overflow-hidden bg-transparent">
         <img 
           key={currentIcon} // Force re-render for animation if needed
           src={`${process.env.NODE_ENV === 'production' ? '/copyrent-web' : ''}${currentIcon}`}
           alt="Premium Icon" 
-          className="w-full h-full object-contain filter drop-shadow-xl animate-fade-in"
+          className="w-full h-full object-contain filter drop-shadow-xl animate-fade-in mix-blend-multiply"
           loading="lazy"
         />
       </div>
       
       {/* Text Content */}
       <div className="flex flex-col text-left">
-        <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#0170B9] mb-0.5 opacity-80">
+        <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/60 mb-0.5">
           CopyRent Plus
         </span>
         <div className="flex items-center min-h-[1.5rem] md:min-h-[1.75rem]">
           <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap overflow-visible">
             <Typewriter phrases={phrases} onPhraseChange={setCurrentIdx} />
           </span>
-          <span className="w-0.5 h-4 md:h-5 bg-[#0170B9] ml-1.5 animate-cursor-blink" />
+          <span className="w-0.5 h-4 md:h-5 bg-white/80 ml-1.5 animate-cursor-blink" />
         </div>
       </div>
     </div>
