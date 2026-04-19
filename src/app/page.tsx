@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
+
 import { Button } from '@/components/ui/button'
 import {
   Accordion,
@@ -281,6 +282,12 @@ export default function Home() {
             <p className="text-lg sm:text-xl text-white/80 mb-8">
               Reducí costos hasta un 50%
             </p>
+            
+            {/* Premium Feature Badge with Typewriter Effect */}
+            <div className="absolute top-[80%] left-1/2 -translate-x-1/2 w-full max-w-lg lg:left-full lg:-translate-x-0 lg:-ml-12 lg:-mt-24 pointer-events-none mt-12 lg:mt-0 px-4 sm:px-0">
+              <PremiumFeatureBadge />
+            </div>
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="#productos"
@@ -576,6 +583,85 @@ function TransformacionSection() {
     </section>
   )
 }
+
+/* ──── PREMIUM FEATURE BADGE ──── */
+function PremiumFeatureBadge() {
+  const phrases = useMemo(() => [
+    "ahorra costos de tu empresa",
+    "atención personalizada",
+    "soporte garantizado",
+    "auditoría sin cargo"
+  ], [])
+
+  return (
+    <div className="inline-flex items-center gap-3 md:gap-4 bg-white/10 backdrop-blur-md border border-white/20 p-2 md:p-3 pr-4 md:pr-6 rounded-2xl shadow-2xl animate-fade-in pointer-events-auto">
+      {/* Icon Container */}
+      <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-white/20 rounded-xl flex items-center justify-center p-1 overflow-hidden shadow-inner">
+        <img 
+          src={`${process.env.NODE_ENV === 'production' ? '/copyrent-web' : ''}/images/printer-icon.png`}
+          alt="Printer Icon" 
+          className="w-full h-full object-contain"
+          loading="lazy"
+        />
+      </div>
+      
+      {/* Text Content */}
+      <div className="flex flex-col">
+        <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#0170B9] mb-0.5">
+          CopyRent Plus
+        </span>
+        <div className="flex items-center min-h-[1.5rem] md:min-h-[1.75rem]">
+          <span className="text-sm md:text-base font-semibold text-white truncate">
+            <Typewriter phrases={phrases} />
+          </span>
+          <span className="w-0.5 h-4 md:h-5 bg-[#0170B9] ml-1 animate-cursor-blink" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ──── TYPEWRITER ANIMATION HELPER ──── */
+function Typewriter({ phrases }: { phrases: string[] }) {
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0)
+  const [currentText, setCurrentText] = useState('')
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [typingSpeed, setTypingSpeed] = useState(100)
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const fullPhrase = phrases[currentPhraseIndex]
+      
+      if (!isDeleting) {
+        // Typing
+        setCurrentText(fullPhrase.substring(0, currentText.length + 1))
+        setTypingSpeed(100) // Default typing speed
+        
+        if (currentText === fullPhrase) {
+          // Pause at the end before deleting
+          setTypingSpeed(2000)
+          setIsDeleting(true)
+        }
+      } else {
+        // Deleting
+        setCurrentText(fullPhrase.substring(0, currentText.length - 1))
+        setTypingSpeed(50) // Fast delete
+        
+        if (currentText === '') {
+          setIsDeleting(false)
+          setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length)
+          setTypingSpeed(500) // Pause before next phrase
+        }
+      }
+    }
+
+    const timer = setTimeout(handleTyping, typingSpeed)
+    return () => clearTimeout(timer)
+  }, [currentText, isDeleting, currentPhraseIndex, phrases, typingSpeed])
+
+  return <span>{currentText}</span>
+}
+
 
 /* ──── CONTROL Y MONITOREO ──── */
 function ControlMonitoreoSection() {
