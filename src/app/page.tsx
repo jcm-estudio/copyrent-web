@@ -425,8 +425,19 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="border-t border-white/10 py-4 text-center text-xs text-white/50">
-          Copyright © 2026 CopyRent | Web JCM Julio Mendez
+        <div className="border-t border-white/10 py-6 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 text-xs text-white/50">
+          <span>Copyright © 2026 CopyRent |</span>
+          <span>
+            By design{' '}
+            <a
+              href="https://jcm-estudio.github.io/.HOME/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-white transition-colors underline underline-offset-2"
+            >
+              JCM Construcciones
+            </a>
+          </span>
         </div>
       </footer>
 
