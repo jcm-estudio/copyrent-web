@@ -942,21 +942,29 @@ function ProductosSection() {
 
 /* ──── MARCAS BANNER ──── */
 function MarcasBanner() {
+  const brands = [
+    { name: 'Ricoh', src: '/images/brands/ricoh.png' },
+    { name: 'Epson', src: '/images/brands/epson.png' },
+    { name: 'BenQ', src: '/images/brands/benq.png' },
+  ]
   return (
-    <section className="py-8 bg-white">
+    <section className="py-12 md:py-16 bg-gray-50 border-t border-gray-100">
       <div className="max-w-5xl mx-auto px-4">
-        <img
-          src="https://document-consulting.com/wp-content/uploads/2023/04/Mesa-de-trabajo-1-copia-100.jpg"
-          alt="Trabajamos con marcas líderes como Epson, Canon, Lexmark, Toshiba, Avision y Kodak Alaris"
-          className="w-full hidden md:block"
-          loading="lazy"
-        />
-        <img
-          src="https://document-consulting.com/wp-content/uploads/2023/04/Mesa-de-trabajo-2-copia-100.jpg"
-          alt="Trabajamos con marcas líderes como Epson, Canon, Lexmark, Toshiba, Avision y Kodak Alaris"
-          className="w-full md:hidden"
-          loading="lazy"
-        />
+        <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest mb-8">
+          Trabajamos con marcas líderes
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-12 md:gap-20">
+          {brands.map((brand) => (
+            <div key={brand.name} className="group relative">
+              <img
+                src={brand.src}
+                alt={brand.name}
+                className="h-10 md:h-14 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-110"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -1048,7 +1056,7 @@ function ContactoSection() {
               <SelectTrigger className="bg-transparent border-2 border-white/40 text-white focus:border-white rounded-none h-12 px-4">
                 <SelectValue placeholder="Cantidad de empleados" />
               </SelectTrigger>
-              <SelectContent className="bg-[#1a2a44] border-white/20">
+              <SelectContent className="bg-white border-gray-200 shadow-2xl text-gray-900 pointer-events-auto z-[100]">
                 <SelectItem value="menos-20">Menos de 20</SelectItem>
                 <SelectItem value="20-50">De 20 a 50</SelectItem>
                 <SelectItem value="50-mas">50 o más</SelectItem>
@@ -1076,7 +1084,7 @@ function ContactoSection() {
               <SelectTrigger className="bg-transparent border-2 border-white/40 text-white focus:border-white rounded-none h-12 px-4">
                 <SelectValue placeholder="Producto de interés" />
               </SelectTrigger>
-              <SelectContent className="bg-[#1a2a44] border-white/20">
+              <SelectContent className="bg-white border-gray-200 shadow-2xl text-gray-900 pointer-events-auto z-[100]">
                 <SelectItem value="plotters">Plotters e impresoras de gran formato / impresoras de etiquetas a color</SelectItem>
                 <SelectItem value="microfilms">Microfilms y digitalización especializada</SelectItem>
                 <SelectItem value="impresoras">Impresoras de alta y mediana producción</SelectItem>
