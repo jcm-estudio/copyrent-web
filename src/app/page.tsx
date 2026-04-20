@@ -1133,6 +1133,7 @@ function ClientesCarousel() {
     "Univ. Torcuato Di Tella",
     "Colegio Moorlands",
     "Universidad Austral",
+    "Colegio Martin Buber",
   ];
   return (
     <section className="py-12 bg-white overflow-hidden border-b border-gray-100">
