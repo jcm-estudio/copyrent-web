@@ -433,7 +433,7 @@ export default function Home() {
               href="https://jcm-estudio.github.io/.HOME/index.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-white transition-colors underline underline-offset-2"
+              className="text-white/70 hover:text-[#f16d22] transition-colors underline underline-offset-2 hover:decoration-[#f16d22]"
             >
               JCM Construcciones
             </a>
