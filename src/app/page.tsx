@@ -366,6 +366,9 @@ export default function Home() {
         {/* ──── SOLUCIÓN DE IMPRESIÓN SUSTENTABLE ──── */}
         <SustentableSection />
 
+        {/* ──── CLIENTES EDUCATIVOS CAROUSEL ──── */}
+        <ClientesCarousel />
+
         {/* ──── TRANSFORMACIÓN DIGITAL ──── */}
         <TransformacionSection />
 
@@ -1105,6 +1108,43 @@ function ContactoSection() {
               {submitting ? 'Enviando...' : 'Enviar'}
             </Button>
           </form>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ──── CLIENTES CAROUSEL ──── */
+function ClientesCarousel() {
+  const institutionNames = [
+    "UADE",
+    "Universidad de Buenos Aires",
+    "Univ. Torcuato Di Tella",
+    "Colegio Moorlands",
+    "Universidad Austral",
+  ];
+  return (
+    <section className="py-12 bg-white overflow-hidden border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 mb-10">
+        <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest">
+          Instituciones educativas que confían en nosotros
+        </p>
+      </div>
+      
+      <div className="relative flex overflow-x-hidden group max-w-[100vw]">
+        <div className="flex w-fit animate-marquee group-hover:[animation-play-state:paused]">
+          {[0, 1, 2, 3].map((group) => (
+            <div key={group} className="flex shrink-0 items-center">
+              {institutionNames.map((name, idx) => (
+                <span 
+                  key={`${group}-${idx}`} 
+                  className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-200 uppercase tracking-widest px-8 md:px-16 transition-colors duration-500 hover:text-[#0170B9] cursor-default select-none whitespace-nowrap"
+                >
+                  {name}
+                </span>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </section>
