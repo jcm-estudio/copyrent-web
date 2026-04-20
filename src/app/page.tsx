@@ -1085,10 +1085,10 @@ function ContactoSection() {
                 <SelectValue placeholder="Producto de interés" />
               </SelectTrigger>
               <SelectContent className="bg-white border-gray-200 shadow-2xl text-gray-900 pointer-events-auto z-[100]">
-                <SelectItem value="plotters">Plotters e impresoras de gran formato / impresoras de etiquetas a color</SelectItem>
-                <SelectItem value="microfilms">Microfilms y digitalización especializada</SelectItem>
-                <SelectItem value="impresoras">Impresoras de alta y mediana producción</SelectItem>
-                <SelectItem value="scanners">Scanners de documentos profesionales</SelectItem>
+                <SelectItem value="impresoras">Impresoras</SelectItem>
+                <SelectItem value="multifuncionales">Multifuncionales</SelectItem>
+                <SelectItem value="duplicadora">Duplicadora Digital</SelectItem>
+                <SelectItem value="proyectores">Proyectores</SelectItem>
               </SelectContent>
             </Select>
             <Textarea
