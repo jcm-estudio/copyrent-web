@@ -1134,6 +1134,10 @@ function ClientesCarousel() {
     "Colegio Moorlands",
     "Universidad Austral",
     "Colegio Martin Buber",
+    "Instituto Tecnológico de Buenos Aires (ITBA)",
+    "Universidad de San Andrés",
+    "Universidad del CEMA (UCEMA)",
+    "Universidad Católica Argentina (UCA)",
   ];
   return (
     <section className="py-12 bg-white overflow-hidden border-b border-gray-100">
