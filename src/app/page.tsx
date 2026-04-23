@@ -771,109 +771,109 @@ function ProductosSection() {
 
   const productosOficiales = [
     {
-      src: '/images/products/CATSHEET_EM_C8100.jpeg',
+      src: '/images/products/optimized/CATSHEET_EM_C8100.png',
       title: 'Epson WorkForce Pro EM-C8100',
       desc: 'Impresora Monocromática, Escanea, Copia, Fax. Alto tránsito.',
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/Especificaciones-POWERLITE-L210W.jpeg',
+      src: '/images/products/optimized/Especificaciones-POWERLITE-L210W.png',
       title: 'Epson PowerLite L210W',
       desc: 'Proyector Láser 3LCD, 4.500 lúmenes de brillo.',
       type: 'Proyector'
     },
     {
-      src: '/images/products/Especificciones-WF-C878R-v2.jpeg',
+      src: '/images/products/optimized/Especificciones-WF-C878R-v2.png',
       title: 'Epson WorkForce Pro WF-C878R',
       desc: 'Multifuncional a color con tecnología RIPS (86.000 páginas).',
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/PowerLite_L260F_Laser_Display_Projector_Specification_Sheet_CPD-62987.jpeg',
+      src: '/images/products/optimized/PowerLite_L260F_Laser_Display_Projector_Specification_Sheet_CPD-62987.png',
       title: 'Epson PowerLite L260F',
       desc: 'Proyector Láser Inalámbrico 1080p, 4.600 lúmenes.',
       type: 'Proyector'
     },
     {
-      src: '/images/products/Epson-BrightLink-695Wi.jpg',
+      src: '/images/products/optimized/Epson-BrightLink-695Wi.png',
       title: 'Epson BrightLink 695Wi+',
       desc: 'Proyector Interactivo Ultramontaje WXGA. Ideal para educación.',
       type: 'Proyector'
     },
     {
-      src: '/images/products/Epson-BrightLink-760Wi.jpg',
+      src: '/images/products/optimized/Epson-BrightLink-760Wi.png',
       title: 'Epson BrightLink 760Wi',
       desc: 'Proyector Láser Interactivo 3LCD. 4.100 lúmenes para aprendizaje inmersivo.',
       type: 'Proyector'
     },
     {
-      src: '/images/products/im-C4500-C6000-spec-sheet-es-la.jpeg',
+      src: '/images/products/optimized/im-C4500-C6000-spec-sheet-es-la.png',
       title: 'Ricoh IM C4500 / C6000',
       desc: 'Equipo Inteligente Multifunción A3 a Color.',
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/im430f-spec-sheet-es-la.jpeg',
+      src: '/images/products/optimized/im430f-spec-sheet-es-la.png',
       title: 'Ricoh IM 430F',
       desc: 'Equipo Inteligente Multifunción A4 Monocromo.',
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/impresora_multifuncion_MP501SPF-601SPF.jpeg',
+      src: '/images/products/optimized/impresora_multifuncion_MP501SPF-601SPF.png',
       title: 'Ricoh MP 501SPF / 601SPF',
       desc: 'Impresora Multifunción Láser Monocromo (50-60ppm).',
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/M320F_P311_Brochure_CAEN.jpeg',
+      src: '/images/products/optimized/M320F_P311_Brochure_CAEN.png',
       title: 'Ricoh M320F / P311',
       desc: 'Impresora Multifunción de Escritorio Monocromo productiva.',
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/mpc6004.jpeg',
+      src: '/images/products/optimized/mpc6004.png',
       title: 'Ricoh MP C6004',
       desc: 'Multifunción Láser a Color de Alto Rendimiento.',
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/R4111_v3_IM_C300F_IM_C400F_IM_C400SRF_Data_Sheet_hi-res_sp.jpeg',
+      src: '/images/products/optimized/R4111_v3_IM_C300F_IM_C400F_IM_C400SRF_Data_Sheet_hi-res_sp.png',
       title: 'Ricoh IM C300F / C400F',
       desc: 'Equipo Inteligente Multifunción A4 a Color.',
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/Ricoh-MP-6055-Folleto.jpeg',
+      src: '/images/products/optimized/Ricoh-MP-6055-Folleto.png',
       title: 'Ricoh MP 6055 Series',
       desc: 'Multifunción Láser Monocromo para la oficina.',
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/Ricoh-MP-6503-Folleto.jpeg',
+      src: '/images/products/optimized/Ricoh-MP-6503-Folleto.png',
       title: 'Ricoh MP 6503SP',
       desc: 'Multifunción de Producción Láser Monocromo.',
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/Ricoh-MP-C6503-Folleto.jpeg',
+      src: '/images/products/optimized/Ricoh-MP-C6503-Folleto.png',
       title: 'Ricoh MP C6503',
       desc: 'Multifunción A3 de Alta Producción a Color.',
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/sp_3710sf.jpeg',
+      src: '/images/products/optimized/sp_3710sf.png',
       title: 'Ricoh SP 3710SF',
       desc: 'Impresora Multifunción Láser B/N Compacta.',
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/EH600.jpeg',
+      src: '/images/products/optimized/EH600.png',
       title: 'BenQ EH600',
       desc: 'Proyector Inteligente Wireless. Calidad corporativa.',
       type: 'Proyector'
     },
     {
-      src: '/images/products/EW800ST.jpeg',
+      src: '/images/products/optimized/EW800ST.png',
       title: 'BenQ EW800ST',
       desc: 'Proyector Inteligente Interactivo de Tiro Corto.',
       type: 'Proyector'
