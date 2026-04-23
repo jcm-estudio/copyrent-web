@@ -307,7 +307,7 @@ export default function Home() {
         </section>
 
         {/* ──── SOLUCIÓN INTEGRAL ──── */}
-        <section id="servicios" className="py-16 md:py-24 bg-white">
+        <section id="servicios" className="py-16 md:py-24 bg-white min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] flex flex-col justify-center">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">
               <span className="text-[#0170B9]">NUESTROS</span> SERVICIOS
@@ -487,7 +487,7 @@ function SustentableSection() {
   ]
 
   return (
-    <section id="solucion-de-impresion" className="py-16 md:py-24 bg-[#f0f4f8]">
+    <section id="solucion-de-impresion" className="py-16 md:py-24 bg-[#f0f4f8] min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
@@ -549,7 +549,7 @@ function TransformacionSection() {
   ]
 
   return (
-    <section id="transformacion-digital" className="py-16 md:py-24 bg-white">
+    <section id="transformacion-digital" className="py-16 md:py-24 bg-white min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
@@ -699,7 +699,7 @@ function ControlMonitoreoSection() {
   ]
 
   return (
-    <section id="control-y-monitoreo" className="py-16 md:py-24 bg-[#f8faf9]">
+    <section id="control-y-monitoreo" className="py-16 md:py-24 bg-[#f8faf9] min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
