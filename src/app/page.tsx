@@ -257,7 +257,7 @@ export default function Home() {
         {/* ──── HERO SECTION ──── */}
         <section
           id="inicio"
-          className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+          className="relative min-h-[90vh] flex items-center justify-center overflow-hidden scroll-mt-20"
         >
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">

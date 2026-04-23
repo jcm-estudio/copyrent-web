@@ -107,7 +107,6 @@
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
 }
 
 /* Fallback animations for fade/in */
