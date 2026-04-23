@@ -777,12 +777,6 @@ function ProductosSection() {
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/EH600.jpeg',
-      title: 'BenQ EH600',
-      desc: 'Proyector Inteligente Wireless. Calidad corporativa.',
-      type: 'Proyector'
-    },
-    {
       src: '/images/products/Especificaciones-POWERLITE-L210W.jpeg',
       title: 'Epson PowerLite L210W',
       desc: 'Proyector Láser 3LCD, 4.500 lúmenes de brillo.',
@@ -795,9 +789,21 @@ function ProductosSection() {
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/EW800ST.jpeg',
-      title: 'BenQ EW800ST',
-      desc: 'Proyector Inteligente Interactivo de Tiro Corto.',
+      src: '/images/products/PowerLite_L260F_Laser_Display_Projector_Specification_Sheet_CPD-62987.jpeg',
+      title: 'Epson PowerLite L260F',
+      desc: 'Proyector Láser Inalámbrico 1080p, 4.600 lúmenes.',
+      type: 'Proyector'
+    },
+    {
+      src: '/images/products/Epson-BrightLink-695Wi.jpg',
+      title: 'Epson BrightLink 695Wi+',
+      desc: 'Proyector Interactivo Ultramontaje WXGA. Ideal para educación.',
+      type: 'Proyector'
+    },
+    {
+      src: '/images/products/Epson-BrightLink-760Wi.jpg',
+      title: 'Epson BrightLink 760Wi',
+      desc: 'Proyector Láser Interactivo 3LCD. 4.100 lúmenes para aprendizaje inmersivo.',
       type: 'Proyector'
     },
     {
@@ -831,12 +837,6 @@ function ProductosSection() {
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/PowerLite_L260F_Laser_Display_Projector_Specification_Sheet_CPD-62987.jpeg',
-      title: 'Epson PowerLite L260F',
-      desc: 'Proyector Láser Inalámbrico 1080p, 4.600 lúmenes.',
-      type: 'Proyector'
-    },
-    {
       src: '/images/products/R4111_v3_IM_C300F_IM_C400F_IM_C400SRF_Data_Sheet_hi-res_sp.jpeg',
       title: 'Ricoh IM C300F / C400F',
       desc: 'Equipo Inteligente Multifunción A4 a Color.',
@@ -867,15 +867,15 @@ function ProductosSection() {
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/products/Epson-BrightLink-695Wi.jpg',
-      title: 'Epson BrightLink 695Wi+',
-      desc: 'Proyector Interactivo Ultramontaje WXGA. Ideal para educación.',
+      src: '/images/products/EH600.jpeg',
+      title: 'BenQ EH600',
+      desc: 'Proyector Inteligente Wireless. Calidad corporativa.',
       type: 'Proyector'
     },
     {
-      src: '/images/products/Epson-BrightLink-760Wi.jpg',
-      title: 'Epson BrightLink 760Wi',
-      desc: 'Proyector Láser Interactivo 3LCD. 4.100 lúmenes para aprendizaje inmersivo.',
+      src: '/images/products/EW800ST.jpeg',
+      title: 'BenQ EW800ST',
+      desc: 'Proyector Inteligente Interactivo de Tiro Corto.',
       type: 'Proyector'
     }
   ]
@@ -958,8 +958,8 @@ function ProductosSection() {
 /* ──── MARCAS BANNER ──── */
 function MarcasBanner() {
   const brands = [
-    { name: 'Ricoh', src: '/images/brands/ricoh.png' },
     { name: 'Epson', src: '/images/brands/epson.png' },
+    { name: 'Ricoh', src: '/images/brands/ricoh.png' },
     { name: 'BenQ', src: '/images/brands/benq.png' },
   ]
   return (
