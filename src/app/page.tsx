@@ -783,7 +783,7 @@ function ProductosSection() {
       type: 'Proyector'
     },
     {
-      src: '/images/WorkForce Pro WF-C878R.jpg',
+      src: '/images/wf-c878r.jpg',
       title: 'Epson WorkForce Pro WF-C878R',
       desc: 'Multifuncional a color con tecnología RIPS (86.000 páginas).',
       type: 'Impresora / Multifunción'
@@ -795,7 +795,7 @@ function ProductosSection() {
       type: 'Proyector'
     },
     {
-      src: '/images/Epson BrightLink 695Wi+.jpg',
+      src: '/images/epson-695wi.jpg',
       title: 'Epson BrightLink 695Wi+',
       desc: 'Proyector Interactivo Ultramontaje WXGA. Ideal para educación.',
       type: 'Proyector'
@@ -855,13 +855,13 @@ function ProductosSection() {
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/MP C6503.png',
+      src: '/images/mp-c6503.png',
       title: 'Ricoh MP C6503',
       desc: 'Multifunción A3 de Alta Producción a Color.',
       type: 'Impresora / Multifunción'
     },
     {
-      src: '/images/SP 3710SF.jpg',
+      src: '/images/sp-3710sf.jpg',
       title: 'Ricoh SP 3710SF',
       desc: 'Impresora Multifunción Láser B/N Compacta.',
       type: 'Impresora / Multifunción'
