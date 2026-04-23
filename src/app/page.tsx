@@ -313,10 +313,10 @@ export default function Home() {
               <span className="text-[#0170B9]">NUESTROS</span> SERVICIOS
             </h2>
             <h3 className="text-lg sm:text-xl text-center text-gray-600 mb-4">
-              Gestión integral para empresas y colegios
+              Gestión integral para empresas e instituciones educativas
             </h3>
             <p className="text-center text-gray-500 max-w-2xl mx-auto mb-8">
-              Nos dedicamos a la venta y alquiler de máquinas fotocopiadoras, multifuncionales y proyectores Epson para cubrir todas las necesidades de su empresa.
+              Nos dedicamos a la venta y alquiler de máquinas fotocopiadoras, multifuncionales y proyectores Epson para cubrir todas las necesidades.
             </p>
 
             <h4 className="text-xl font-semibold text-gray-900 mb-4">Puntos destacados:</h4>
