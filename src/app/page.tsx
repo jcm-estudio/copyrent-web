@@ -273,7 +273,7 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6 uppercase">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6">
               Alquiler de equipos de impresión, copiadoras y venta de proyectores.
             </h1>
 
