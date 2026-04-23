@@ -118,6 +118,7 @@ function useInView(threshold = 0.15) {
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeTab, setActiveTab] = useState('Todos')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -125,7 +126,7 @@ export default function Home() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  type NavLink = { label: string; href: string; external?: boolean; children?: { label: string; href: string }[] }
+  type NavLink = { label: string; href: string; external?: boolean; children?: { label: string; href: string; onClick?: () => void }[]; onClick?: () => void }
   const navLinks: NavLink[] = [
     { label: 'Inicio', href: '#inicio' },
     { label: 'Aulas Híbridas', href: '#solucion-de-impresion' },
@@ -134,10 +135,10 @@ export default function Home() {
       label: 'Equipamiento',
       href: '#equipamiento',
       children: [
-        { label: 'Impresoras', href: '#productos' },
-        { label: 'Multifuncionales', href: '#productos' },
-        { label: 'Duplicadora Digital', href: '#productos' },
-        { label: 'Proyectores', href: '#productos' },
+        { label: 'Impresoras', href: '#productos', onClick: () => setActiveTab('Impresoras') },
+        { label: 'Multifuncionales', href: '#productos', onClick: () => setActiveTab('Multifuncionales') },
+        { label: 'Duplicadora Digital', href: '#productos', onClick: () => setActiveTab('Duplicadora Digital') },
+        { label: 'Proyectores', href: '#productos', onClick: () => setActiveTab('Proyectores') },
       ],
     },
     { label: 'Servicios', href: '#servicios' },
@@ -178,6 +179,7 @@ export default function Home() {
                           <a
                             key={child.label}
                             href={child.href}
+                            onClick={child.onClick}
                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#e6f0f7] hover:text-[#0170B9] transition-colors"
                           >
                             {child.label}
@@ -230,7 +232,7 @@ export default function Home() {
                           <a
                             key={child.label}
                             href={child.href}
-                            onClick={() => setMobileMenuOpen(false)}
+                            onClick={() => { setMobileMenuOpen(false); if (child.onClick) child.onClick(); }}
                             className="block px-10 py-2 text-sm text-white/80 hover:text-white hover:bg-[#015086] transition-colors"
                           >
                             {child.label}
@@ -377,7 +379,7 @@ export default function Home() {
         <ControlMonitoreoSection />
 
         {/* ──── PRODUCTOS ──── */}
-        <ProductosSection />
+        <ProductosSection activeTab={activeTab} setActiveTab={setActiveTab} />
 
         {/* ──── MARCAS BANNER ──── */}
         <MarcasBanner />
@@ -764,119 +766,124 @@ function ControlMonitoreoSection() {
 }
 
 /* ──── PRODUCTOS ──── */
-function ProductosSection() {
+function ProductosSection({ activeTab, setActiveTab }: { activeTab: string, setActiveTab: (t: string) => void }) {
   const { ref, inView } = useInView()
   const [visibleCount, setVisibleCount] = useState(8)
-  const [activeTab, setActiveTab] = useState('Todos')
 
   const productosOficiales = [
     {
       src: '/images/products/optimized/CATSHEET_EM_C8100.png',
       title: 'Epson WorkForce Pro EM-C8100',
       desc: 'Impresora Monocromática, Escanea, Copia, Fax. Alto tránsito.',
-      type: 'Impresora / Multifunción'
+      type: 'Multifuncionales'
     },
     {
       src: '/images/products/optimized/Especificaciones-POWERLITE-L210W.png',
       title: 'Epson PowerLite L210W',
       desc: 'Proyector Láser 3LCD, 4.500 lúmenes de brillo.',
-      type: 'Proyector'
+      type: 'Proyectores'
     },
     {
       src: '/images/wf-c878r.jpg',
       title: 'Epson WorkForce Pro WF-C878R',
       desc: 'Multifuncional a color con tecnología RIPS (86.000 páginas).',
-      type: 'Impresora / Multifunción'
+      type: 'Multifuncionales'
     },
     {
       src: '/images/products/optimized/PowerLite_L260F_Laser_Display_Projector_Specification_Sheet_CPD-62987.png',
       title: 'Epson PowerLite L260F',
       desc: 'Proyector Láser Inalámbrico 1080p, 4.600 lúmenes.',
-      type: 'Proyector'
+      type: 'Proyectores'
     },
     {
       src: '/images/epson-695wi.jpg',
       title: 'Epson BrightLink 695Wi+',
       desc: 'Proyector Interactivo Ultramontaje WXGA. Ideal para educación.',
-      type: 'Proyector'
+      type: 'Proyectores'
     },
     {
       src: '/images/products/optimized/Epson-BrightLink-760Wi.png',
       title: 'Epson BrightLink 760Wi',
       desc: 'Proyector Láser Interactivo 3LCD. 4.100 lúmenes para aprendizaje inmersivo.',
-      type: 'Proyector'
+      type: 'Proyectores'
     },
     {
       src: '/images/products/optimized/im-C4500-C6000-spec-sheet-es-la.png',
       title: 'Ricoh IM C4500 / C6000',
       desc: 'Equipo Inteligente Multifunción A3 a Color.',
-      type: 'Impresora / Multifunción'
+      type: 'Multifuncionales'
     },
     {
       src: '/images/products/optimized/im430f-spec-sheet-es-la.png',
       title: 'Ricoh IM 430F',
       desc: 'Equipo Inteligente Multifunción A4 Monocromo.',
-      type: 'Impresora / Multifunción'
+      type: 'Multifuncionales'
     },
     {
       src: '/images/products/optimized/impresora_multifuncion_MP501SPF-601SPF.png',
       title: 'Ricoh MP 501SPF / 601SPF',
       desc: 'Impresora Multifunción Láser Monocromo (50-60ppm).',
-      type: 'Impresora / Multifunción'
+      type: 'Impresoras'
     },
     {
       src: '/images/products/optimized/M320F_P311_Brochure_CAEN.png',
       title: 'Ricoh M320F / P311',
       desc: 'Impresora Multifunción de Escritorio Monocromo productiva.',
-      type: 'Impresora / Multifunción'
+      type: 'Multifuncionales'
     },
     {
       src: '/images/products/optimized/mpc6004.png',
       title: 'Ricoh MP C6004',
       desc: 'Multifunción Láser a Color de Alto Rendimiento.',
-      type: 'Impresora / Multifunción'
+      type: 'Multifuncionales'
     },
     {
       src: '/images/products/optimized/R4111_v3_IM_C300F_IM_C400F_IM_C400SRF_Data_Sheet_hi-res_sp.png',
       title: 'Ricoh IM C300F / C400F',
       desc: 'Equipo Inteligente Multifunción A4 a Color.',
-      type: 'Impresora / Multifunción'
+      type: 'Multifuncionales'
     },
     {
       src: '/images/products/optimized/Ricoh-MP-6055-Folleto.png',
       title: 'Ricoh MP 6055 Series',
       desc: 'Multifunción Láser Monocromo para la oficina.',
-      type: 'Impresora / Multifunción'
+      type: 'Multifuncionales'
     },
     {
       src: '/images/products/optimized/Ricoh-MP-6503-Folleto.png',
       title: 'Ricoh MP 6503SP',
       desc: 'Multifunción de Producción Láser Monocromo.',
-      type: 'Impresora / Multifunción'
+      type: 'Multifuncionales'
     },
     {
       src: '/images/mp-c6503.png',
       title: 'Ricoh MP C6503',
       desc: 'Multifunción A3 de Alta Producción a Color.',
-      type: 'Impresora / Multifunción'
+      type: 'Multifuncionales'
     },
     {
       src: '/images/sp-3710sf.jpg',
       title: 'Ricoh SP 3710SF',
       desc: 'Impresora Multifunción Láser B/N Compacta.',
-      type: 'Impresora / Multifunción'
+      type: 'Multifuncionales'
     },
     {
       src: '/images/products/optimized/EH600.png',
       title: 'BenQ EH600',
       desc: 'Proyector Inteligente Wireless. Calidad corporativa.',
-      type: 'Proyector'
+      type: 'Proyectores'
     },
     {
       src: '/images/products/optimized/EW800ST.png',
       title: 'BenQ EW800ST',
       desc: 'Proyector Inteligente Interactivo de Tiro Corto.',
-      type: 'Proyector'
+      type: 'Proyectores'
+    },
+    {
+      src: '/images/products/optimized/Ricoh-MP-6055-Folleto.png',
+      title: 'Ricoh DD 3334',
+      desc: 'Duplicadora Digital de Alta Velocidad. Ideal para escuelas y oficinas.',
+      type: 'Duplicadora Digital'
     }
   ]
 
@@ -899,7 +906,7 @@ function ProductosSection() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mb-2">
-            {['Todos', 'Impresora / Multifunción', 'Proyector'].map(tab => (
+            {['Todos', 'Impresoras', 'Multifuncionales', 'Duplicadora Digital', 'Proyectores'].map(tab => (
               <button
                 key={tab}
                 onClick={() => { setActiveTab(tab); setVisibleCount(8); }}
