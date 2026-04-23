@@ -280,7 +280,7 @@ export default function Home() {
             <p className="text-xl sm:text-2xl font-light text-white/90 mb-4 max-w-3xl mx-auto">
               Tecnología sustentable sin inversión inicial. Presupuesto a medida, soporte y atención personalizada para tu empresa o institución educativa.
             </p>
-            <p className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight mb-10 uppercase text-transparent bg-clip-text bg-gradient-to-r from-white via-[#73b2e3] to-white animate-shimmer drop-shadow-md">
+            <p className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-10 uppercase text-transparent bg-clip-text bg-gradient-to-r from-white via-[#73b2e3] to-white animate-shimmer drop-shadow-md">
               Reducí costos hasta un 50%
             </p>
 
