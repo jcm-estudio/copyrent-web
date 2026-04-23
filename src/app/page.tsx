@@ -70,7 +70,7 @@ function ScrollToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      className="fixed left-3 bottom-3 z-50 bg-black text-white rounded px-3 py-1 text-sm shadow-lg hover:bg-gray-800 transition"
+      className="fixed left-3 bottom-3 z-50 bg-black text-white rounded min-w-[44px] min-h-[44px] flex items-center justify-center p-3 text-sm shadow-lg hover:bg-gray-800 transition"
       aria-label="Volver arriba"
     >
       ↑ Top
@@ -145,7 +145,7 @@ export default function Home() {
   ]
 
   return (
-    <div className="min-h-screen flex flex-col font-[var(--font-montserrat)]">
+    <div className="min-h-[100dvh] flex flex-col font-[var(--font-montserrat)]">
       {/* ═══════ HEADER ═══════ */}
       <header
         className={`sticky top-0 z-40 bg-white transition-shadow duration-300 ${scrolled ? 'shadow-md' : 'shadow-sm'}`}
@@ -257,7 +257,7 @@ export default function Home() {
         {/* ──── HERO SECTION ──── */}
         <section
           id="inicio"
-          className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+          className="relative min-h-[90dvh] flex items-center justify-center overflow-hidden"
         >
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
@@ -265,6 +265,7 @@ export default function Home() {
               src="/images/hero-bg.png"
               alt="Background" 
               className="absolute inset-0 w-full h-full object-cover"
+              fetchPriority="high"
             />
             {/* Color Overlay: Brand Blue with opacity and mix-blend for a professional look */}
             <div className="absolute inset-0 bg-[#0170B9]/70 mix-blend-multiply" />
@@ -273,7 +274,7 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6 uppercase">
+            <h1 className="text-[clamp(1.875rem,5vw,3rem)] font-bold text-white leading-tight mb-6 uppercase">
               Alquiler de equipos de impresión, copiadoras y venta de proyectores.
             </h1>
 
@@ -307,7 +308,7 @@ export default function Home() {
         </section>
 
         {/* ──── SOLUCIÓN INTEGRAL ──── */}
-        <section id="servicios" className="py-16 md:py-24 bg-white min-h-screen flex flex-col justify-center">
+        <section id="servicios" className="py-16 md:py-24 bg-white min-h-[100dvh] flex flex-col justify-center">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">
               <span className="text-[#0170B9]">NUESTROS</span> SERVICIOS
@@ -487,7 +488,7 @@ function SustentableSection() {
   ]
 
   return (
-    <section id="solucion-de-impresion" className="py-16 md:py-24 bg-[#f0f4f8] min-h-screen flex flex-col justify-center">
+    <section id="solucion-de-impresion" className="py-16 md:py-24 bg-[#f0f4f8] min-h-[100dvh] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
@@ -549,7 +550,7 @@ function TransformacionSection() {
   ]
 
   return (
-    <section id="transformacion-digital" className="py-16 md:py-24 bg-white min-h-screen flex flex-col justify-center">
+    <section id="transformacion-digital" className="py-16 md:py-24 bg-white min-h-[100dvh] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
@@ -699,7 +700,7 @@ function ControlMonitoreoSection() {
   ]
 
   return (
-    <section id="control-y-monitoreo" className="py-16 md:py-24 bg-[#f8faf9] min-h-screen flex flex-col justify-center">
+    <section id="control-y-monitoreo" className="py-16 md:py-24 bg-[#f8faf9] min-h-[100dvh] flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">

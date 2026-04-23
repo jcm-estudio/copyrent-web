@@ -107,7 +107,13 @@
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 4rem; /* h-16 for mobile */
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 5rem; /* h-20 for desktop */
+  }
 }
 
 /* Fallback animations for fade/in */
