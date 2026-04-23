@@ -693,7 +693,7 @@ function ControlMonitoreoSection() {
 
   const beneficios = [
     { title: 'Monitoreo centralizado', desc: 'Accedé a un panel que muestra el estado de cada equipo, consumos y alertas de mantenimiento.', icon: Monitor },
-    { title: 'Reducción de costos operativos', desc: 'Controlá el uso por área, usuario o centro de costos, asignando políticas de impresión consientes.', icon: TrendingDown },
+    { title: 'Reducción de costos operativos', desc: 'Controlá el uso por área, usuario o centro de costos, asignando políticas de impresión conscientes.', icon: TrendingDown },
     { title: 'Automatización y control inteligente', desc: 'Detectá incidencias antes de que impacten, con reportes automáticos de rendimiento y gasto.', icon: Activity },
     { title: 'Seguridad y trazabilidad', desc: 'Protegé los documentos con autenticación, marcas de agua y auditorías de impresión.', icon: Shield },
     { title: 'Gestión remota', desc: 'Configurá y administrá toda tu flota desde cualquier lugar, con soporte técnico remoto.', icon: Globe },
