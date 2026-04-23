@@ -334,7 +334,7 @@ export default function Home() {
                 },
                 {
                   title: 'AHORRO Y CONTROL',
-                  content: 'Contratos personalizados según las necesidades y ubicación geográfica del cliente.',
+                  content: 'Garantizamos la eliminación de gastos ocultos y el aumento de la productividad de su flota de impresión. Todo sin inversiones previas, pagando únicamente por lo que imprime.',
                 },
                 {
                   title: 'ACTUALIZACIÓN TECNOLÓGICA',
