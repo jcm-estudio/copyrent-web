@@ -1176,7 +1176,7 @@ function ClientesCarousel() {
     <section className="py-12 bg-white overflow-hidden border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 mb-10">
         <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest">
-          Empresas e instituciones que confían en nosotros
+          Empresas e instituciones educativas que confían en nosotros
         </p>
       </div>
       
