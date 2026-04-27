@@ -142,6 +142,9 @@ html {
 .animate-marquee {
   animation: marquee 40s linear infinite;
 }
+.animate-marquee-reverse {
+  animation: marquee 40s linear infinite reverse;
+}
 
 /* Shimmer Effect for Premium Text */
 @keyframes shimmer {

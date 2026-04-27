@@ -1135,40 +1135,86 @@ function ContactoSection() {
 
 /* ──── CLIENTES CAROUSEL ──── */
 function ClientesCarousel() {
-  const institutionNames = [
+  const row1 = [
     "UADE",
-    "Universidad de Buenos Aires",
     "Univ. Torcuato Di Tella",
-    "Colegio Moorlands",
     "Universidad Austral",
-    "Colegio Martin Buber",
     "Instituto Tecnológico de Buenos Aires (ITBA)",
-    "Universidad de San Andrés",
     "Universidad del CEMA (UCEMA)",
-    "Universidad Católica Argentina (UCA)",
+    "C.F.B.V.R.A.",
+    "Asociación de Profesionales del Hospital Bernardino Rivadavia",
+    "Colegio Centro Educativo Toratenu",
+    "Teadit Argentina S.A.",
+    "Alvear Palace Hotel S.A.",
+    "Escuela Maimónides (CABA)",
+    "Dirección General de Escuelas – Gobierno de Mendoza",
+    "Cámara Argentina de la Construcción",
+    "Industria Metalúrgica Sud Americana I.M.S.A. S.A.C.I.",
+    "Velplant S.R.L.",
+    "Janos Group S.R.L."
   ];
+
+  const row2 = [
+    "Universidad de Buenos Aires",
+    "Colegio Moorlands",
+    "Colegio Martin Buber",
+    "Universidad de San Andrés",
+    "Universidad Católica Argentina (UCA)",
+    "Círculo Odontológico Rosario",
+    "Colegio Puertas de Sion",
+    "Preludio Producciones S.A.",
+    "Semiramis Producciones S.R.L.",
+    "Fundación Balseiro",
+    "Instituto San José",
+    "Colegio Maimónides Córdoba",
+    "Fenber Ingeniería S.A.",
+    "Universidad Tecnológica Nacional",
+    "Asociación Civil Agrupación Mallorca San Pedro"
+  ];
+
   return (
     <section className="py-12 bg-white overflow-hidden border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 mb-10">
         <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest">
-          Instituciones educativas que confían en nosotros
+          Empresas e instituciones que confían en nosotros
         </p>
       </div>
       
-      <div className="relative flex overflow-x-hidden group max-w-[100vw]">
-        <div className="flex w-fit animate-marquee group-hover:[animation-play-state:paused]">
-          {[0, 1, 2, 3].map((group) => (
-            <div key={group} className="flex shrink-0 items-center">
-              {institutionNames.map((name, idx) => (
-                <span 
-                  key={`${group}-${idx}`} 
-                  className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-200 uppercase tracking-widest px-8 md:px-16 transition-colors duration-500 hover:text-[#0170B9] cursor-default select-none whitespace-nowrap"
-                >
-                  {name}
-                </span>
-              ))}
-            </div>
-          ))}
+      <div className="flex flex-col gap-8">
+        {/* Fila 1 - Izquierda */}
+        <div className="relative flex overflow-x-hidden group max-w-[100vw]">
+          <div className="flex w-fit animate-marquee group-hover:[animation-play-state:paused]">
+            {[0, 1, 2, 3].map((group) => (
+              <div key={`r1-${group}`} className="flex shrink-0 items-center">
+                {row1.map((name, idx) => (
+                  <span 
+                    key={`r1-${group}-${idx}`} 
+                    className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-200 uppercase tracking-widest px-8 md:px-16 transition-colors duration-500 hover:text-[#0170B9] cursor-default select-none whitespace-nowrap"
+                  >
+                    {name}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Fila 2 - Derecha */}
+        <div className="relative flex overflow-x-hidden group max-w-[100vw]">
+          <div className="flex w-fit animate-marquee-reverse group-hover:[animation-play-state:paused]">
+            {[0, 1, 2, 3].map((group) => (
+              <div key={`r2-${group}`} className="flex shrink-0 items-center">
+                {row2.map((name, idx) => (
+                  <span 
+                    key={`r2-${group}-${idx}`} 
+                    className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-200 uppercase tracking-widest px-8 md:px-16 transition-colors duration-500 hover:text-[#0170B9] cursor-default select-none whitespace-nowrap"
+                  >
+                    {name}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
