@@ -1182,7 +1182,7 @@ function ClientesCarousel() {
       
       <div className="flex flex-col gap-8">
         {/* Fila 1 - Izquierda */}
-        <div className="relative flex overflow-x-hidden group max-w-[100vw]">
+        <div className="relative flex overflow-hidden group max-w-[100vw]">
           <div className="flex w-fit animate-marquee group-hover:[animation-play-state:paused]">
             {[0, 1, 2, 3].map((group) => (
               <div key={`r1-${group}`} className="flex shrink-0 items-center">
@@ -1200,7 +1200,7 @@ function ClientesCarousel() {
         </div>
 
         {/* Fila 2 - Derecha */}
-        <div className="relative flex overflow-x-hidden group max-w-[100vw]">
+        <div className="relative flex overflow-hidden group max-w-[100vw]">
           <div className="flex w-fit animate-marquee-reverse group-hover:[animation-play-state:paused]">
             {[0, 1, 2, 3].map((group) => (
               <div key={`r2-${group}`} className="flex shrink-0 items-center">
