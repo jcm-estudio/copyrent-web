@@ -140,10 +140,10 @@ html {
   100% { transform: translateX(-50%); }
 }
 .animate-marquee {
-  animation: marquee 40s linear infinite;
+  animation: marquee 60s linear infinite;
 }
 .animate-marquee-reverse {
-  animation: marquee 40s linear infinite reverse;
+  animation: marquee 60s linear infinite reverse;
 }
 
 /* Shimmer Effect for Premium Text */
