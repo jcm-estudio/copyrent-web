@@ -310,8 +310,8 @@ export default function Home() {
         </section>
 
         {/* ──── SOLUCIÓN INTEGRAL ──── */}
-        <section id="servicios" className="py-16 md:py-24 bg-white min-h-[100dvh] flex flex-col justify-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <section id="servicios" className="py-16 md:py-24 bg-white min-h-[100dvh] grid place-content-center">
+          <div className="w-full max-w-4xl mx-auto px-4 sm:px-6" style={{ width: '56rem', maxWidth: 'calc(100vw - 2rem)' }}>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">
               <span className="text-[#0170B9]">NUESTROS</span> SERVICIOS
             </h2>
